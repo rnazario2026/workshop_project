@@ -5,12 +5,8 @@ date: "2022-10-21"
 categories: [goals,general]
 ---
 
-### Introspect on your own mental imagery
+## Project
 
-This assignment engages you in the process of introspection. Your task is to use introspection to evaluate and describe your own mental imagery abilities. Attempt to answer the following kinds of questions. What is your mental imagery like? Do you have mental imagery for different kinds of senses? Is your mental imagery vivid and life-like or very different from normal perception? How would you describe your mental imagery?
+Families are bleh bleh and blah blah
 
-You should write a **minimum of 250 words**, but feel free to write more. Submit your document on blackboard by the due date.
-
-## My mental imagery
-
-My mental imagery is like...
+![](link.jpg)

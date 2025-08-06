@@ -1,18 +1,12 @@
 ---
 title: "My First post"
-author: "Matt Crump"
-date: "2022-10-21"
-categories: [goals,general]
+author: "Richard Nazario"
+date: "2025-08-06"
+categories: [general]
 ---
 
-This is an example first post. Whatever you write here will appear inside your post.
+## Something About Insurance
 
-It is possible to write lists:
+![](image.jpg.jpg){fig-align="right" width="536"}
 
-1.  One
-2.  Two
-3.  Three
-
-And make headers
-
-## Something About Insuranse
+Blah blah blah

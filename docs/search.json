@@ -1,19 +1,5 @@
 [
   {
-    "objectID": "posts/my_first_post/index.html",
-    "href": "posts/my_first_post/index.html",
-    "title": "My First post",
-    "section": "",
-    "text": "This is an example first post. Whatever you write here will appear inside your post.\nIt is possible to write lists:\nAnd make headers"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#something-about-insuranse",
-    "href": "posts/my_first_post/index.html#something-about-insuranse",
-    "title": "My First post",
-    "section": "Something About Insuranse",
-    "text": "Something About Insuranse"
-  },
-  {
     "objectID": "readme.html",
     "href": "readme.html",
     "title": "Using this quarto course blog template",
@@ -102,7 +88,7 @@
     "href": "index.html",
     "title": "Workshop Project",
     "section": "",
-    "text": "Hello, this is my website.\nI participated in a summer workshop at Dominican University and I created this website using R programming and Github.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\n\n\n\n\n\n\n\nMy First post\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
+    "text": "Hello, this is my website.\nI participated in a summer workshop at Dominican University and I created this website using R programming and Github.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMy First post\n\n\n\ngeneral\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nRichard Nazario\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -116,7 +102,7 @@
     "href": "posts/Example_assignment/index.html",
     "title": "Example assignment",
     "section": "",
-    "text": "This assignment engages you in the process of introspection. Your task is to use introspection to evaluate and describe your own mental imagery abilities. Attempt to answer the following kinds of questions. What is your mental imagery like? Do you have mental imagery for different kinds of senses? Is your mental imagery vivid and life-like or very different from normal perception? How would you describe your mental imagery?\nYou should write a minimum of 250 words, but feel free to write more. Submit your document on blackboard by the due date."
+    "text": "Families are bleh bleh and blah blah"
   },
   {
     "objectID": "posts/Example_assignment/index.html#my-mental-imagery",
@@ -124,5 +110,26 @@
     "title": "Example assignment",
     "section": "My mental imagery",
     "text": "My mental imagery\nMy mental imagery is like…"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html",
+    "href": "posts/my_first_post/index.html",
+    "title": "My First post",
+    "section": "",
+    "text": "Blah blah blah"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#something-about-insurance",
+    "href": "posts/my_first_post/index.html#something-about-insurance",
+    "title": "My First post",
+    "section": "",
+    "text": "Blah blah blah"
+  },
+  {
+    "objectID": "posts/Example_assignment/index.html#project",
+    "href": "posts/Example_assignment/index.html#project",
+    "title": "Example assignment",
+    "section": "",
+    "text": "Families are bleh bleh and blah blah"
   }
 ]
