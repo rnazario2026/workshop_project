@@ -5,7 +5,7 @@ date: "2025-08-06"
 categories: [general]
 ---
 
-## How Age and Gender Affect Car Insurance Premium.
+## Fact or Myth? Does Age and Gender Really Affect Car Insurance Premium?
 
 ![](/ca.jpg)
 
@@ -15,6 +15,20 @@ Does one's age affect the amount they pay annually on their premium?
 
 If so, does gender also become a factor? And what is the difference between them?
 
-### Prediction: 
+### Prediction:
 
 Yes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn't make a difference in price.
+
+### Approach: 
+
+We're going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.
+
+-   **Source:** The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.
+
+-    **Collection Method:** Data was likely gathered from insurance application systems, policy records, and claims databases.
+
+-   **Key Variables:** Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.
+
+-   **Size:** Contains approximately **30,000–100,000 rows**, with each row representing a customer or policy.
+
+-    **Use Cases:** Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.
