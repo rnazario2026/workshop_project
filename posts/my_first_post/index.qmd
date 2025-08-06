@@ -37,7 +37,7 @@ We're going to use a data set created by Apoorva Sharma. This dataset captures a
 install.packages("tidyverse")
 library(tidyverse)
 library(ggplot2)
-ggplot (data=Vehicle_Insurance,mapping= aes(x=Age,y= Annual_Premium,color), alpha=0.10) + geom_jitter(width = 0.00001, height= 0.00001)
+ggplot (data=Vehicle_Insurance,mapping= aes(x=Age,y= log10(Annual_Premium),color), alpha=0.10) + geom_jitter(width = 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001, height= 10.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
         
 
 ```
