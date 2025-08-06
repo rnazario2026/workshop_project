@@ -19,16 +19,25 @@ If so, does gender also become a factor? And what is the difference between them
 
 Yes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn't make a difference in price.
 
-### Approach: 
+### Approach:
 
 We're going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.
 
 -   **Source:** The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.
 
--    **Collection Method:** Data was likely gathered from insurance application systems, policy records, and claims databases.
+-   **Collection Method:** Data was likely gathered from insurance application systems, policy records, and claims databases.
 
 -   **Key Variables:** Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.
 
--   **Size:** Contains approximately **30,000–100,000 rows**, with each row representing a customer or policy.
+-   **Size:** Contains approximately **300,000 rows**, with each row representing a customer or policy.
 
--    **Use Cases:** Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.
+-   **Use Cases:** Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.
+
+```{r}
+install.packages("tidyverse")
+library(tidyverse)
+library(ggplot2)
+ggplot (data=Vehicle_Insurance,mapping= aes(x=Age,y= Annual_Premium,color), alpha=0.10) + geom_jitter(width = 0.00001, height= 0.00001)
+        
+
+```
