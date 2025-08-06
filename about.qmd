@@ -1,5 +1,5 @@
 ---
-title: Workshop_Project
+title: About Me
 image: profile.jpg
 about:
   template: jolla
@@ -16,3 +16,17 @@ about:
 ---
 
 #### **"If you can't be kind, at least be vague.” ― Judith Martin.**
+
+-   blah blah blah
+
+-   blah blah
+
+-   blah
+
+# List
+
+1.  **baba**
+2.  **segunda parte**
+3.  **third**
+
+[Big Text](https://large-type.com/#) is my fav.
