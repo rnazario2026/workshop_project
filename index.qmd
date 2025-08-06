@@ -1,5 +1,5 @@
 ---
-title: "quartoCourseBlog"
+title: "Workshop Project"
 listing:
   contents: posts
   sort: "date desc"
@@ -12,4 +12,6 @@ page-layout: full
 title-block-banner: true
 ---
 
-I love my mom's enchiladas.
+Hello, this is my website.
+
+I participated in a summer workshop at Dominican University and I created this website using R programming and Github.
