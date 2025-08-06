@@ -1,5 +1,19 @@
 [
   {
+    "objectID": "posts/my_first_post/index.html",
+    "href": "posts/my_first_post/index.html",
+    "title": "Project",
+    "section": "",
+    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 30,000–100,000 rows, with each row representing a customer or policy.\nUse Cases: Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector."
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-car-insurance-premium",
+    "href": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-car-insurance-premium",
+    "title": "Project",
+    "section": "",
+    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 30,000–100,000 rows, with each row representing a customer or policy.\nUse Cases: Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector."
+  },
+  {
     "objectID": "readme.html",
     "href": "readme.html",
     "title": "Using this quarto course blog template",
@@ -105,45 +119,10 @@
     "text": "Families are bleh bleh and blah blah"
   },
   {
-    "objectID": "posts/Example_assignment/index.html#my-mental-imagery",
-    "href": "posts/Example_assignment/index.html#my-mental-imagery",
-    "title": "Example assignment",
-    "section": "My mental imagery",
-    "text": "My mental imagery\nMy mental imagery is like…"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html",
-    "href": "posts/my_first_post/index.html",
-    "title": "Project",
-    "section": "",
-    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 30,000–100,000 rows, with each row representing a customer or policy.\nUse Cases: Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector."
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#something-about-insurance",
-    "href": "posts/my_first_post/index.html#something-about-insurance",
-    "title": "My First post",
-    "section": "",
-    "text": "Blah blah blah"
-  },
-  {
     "objectID": "posts/Example_assignment/index.html#project",
     "href": "posts/Example_assignment/index.html#project",
     "title": "Example assignment",
     "section": "",
     "text": "Families are bleh bleh and blah blah"
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#how-age-and-gender-affect-car-insurance-premium.",
-    "href": "posts/my_first_post/index.html#how-age-and-gender-affect-car-insurance-premium.",
-    "title": "Project",
-    "section": "",
-    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price."
-  },
-  {
-    "objectID": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-car-insurance-premium",
-    "href": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-car-insurance-premium",
-    "title": "Project",
-    "section": "",
-    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 30,000–100,000 rows, with each row representing a customer or policy.\nUse Cases: Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector."
   }
 ]
