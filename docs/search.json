@@ -114,9 +114,9 @@
   {
     "objectID": "posts/my_first_post/index.html",
     "href": "posts/my_first_post/index.html",
-    "title": "My First post",
+    "title": "Project",
     "section": "",
-    "text": "Blah blah blah"
+    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price."
   },
   {
     "objectID": "posts/my_first_post/index.html#something-about-insurance",
@@ -131,5 +131,12 @@
     "title": "Example assignment",
     "section": "",
     "text": "Families are bleh bleh and blah blah"
+  },
+  {
+    "objectID": "posts/my_first_post/index.html#how-age-and-gender-affect-car-insurance-premium.",
+    "href": "posts/my_first_post/index.html#how-age-and-gender-affect-car-insurance-premium.",
+    "title": "Project",
+    "section": "",
+    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price."
   }
 ]
