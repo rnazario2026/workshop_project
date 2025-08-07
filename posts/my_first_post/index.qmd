@@ -21,7 +21,7 @@ Yes, I believe that younger people have a higher premium than those who are olde
 
 ### Approach:
 
-We're going to use a data set created by Apoorva Sharma. This dataset captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.
+We're going to use a data set created by Apoorva Sharma. This data set captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.
 
 -   **Source:** The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.
 
@@ -34,10 +34,21 @@ We're going to use a data set created by Apoorva Sharma. This dataset captures a
 -   **Use Cases:** Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.
 
 ```{r}
-install.packages("tidyverse")
-library(tidyverse)
-library(ggplot2)
-ggplot (data=Vehicle_Insurance,mapping= aes(x=Age,y= log10(Annual_Premium),color), alpha=0.10) + geom_jitter(width = 0.000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001, height= 10.0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000001)
-        
+install.packages(tidyverse)
+install.packages("DataEditR")
 
+library(tidyverse)
+
+library(ggplot2)
+
+library(DataEditR)
+
+Vehicle_Insurance <- read.csv("../../Vehicle_Insurance.csv")
+
+Vehicle_Insurance <- Vehicle_Insurance |> mutate(
+  annual_premium_usd = Annual_Premium * 0.011
+)
+
+
+ggplot(data=Vehicle_Insurance, mapping= aes(x=Age,y= annual_premium_usd, color= Gender))+ geom_point()+ geom_smooth(method="lm")
 ```
