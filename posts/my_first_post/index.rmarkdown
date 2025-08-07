@@ -34,6 +34,7 @@ We're going to use a data set created by Apoorva Sharma. This data set captures 
 -   **Use Cases:** Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.
 
 ```{r}
+#| echo: false
 
 library(tidyverse)
 
