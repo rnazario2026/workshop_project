@@ -35,7 +35,6 @@ We're going to use a data set created by Apoorva Sharma. This data set captures 
 
 ```{r}
 
-
 library(tidyverse)
 
 library(ggplot2)
@@ -49,7 +48,7 @@ Vehicle_Insurance <- Vehicle_Insurance |> mutate(
 )
 
 
-ggplot(data=Vehicle_Insurance, mapping= aes(x=Age,y= annual_premium_usd, color= Gender))+ geom_point()+ geom_smooth(method="lm", color= "dark green")+
+ggplot(data=Vehicle_Insurance, mapping= aes(x=Age,y= annual_premium_usd, color= Gender))+ geom_point() + geom_smooth(method="lm", color= "dark green")+
   labs(
     title= "Age vs. Annual Premium",
     subtitle= "India",
