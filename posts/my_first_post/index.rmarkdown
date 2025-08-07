@@ -37,7 +37,6 @@ We're going to use a data set created by Apoorva Sharma. This data set is set in
 
 ```{r}
 #| echo: false
-
 # Suppress package startup messages for a cleaner output
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(DataEditR))
@@ -46,44 +45,61 @@ suppressPackageStartupMessages(library(dplyr))
 # Read the data from the CSV file
 Vehicle_Insurance <- read.csv("../../Vehicle_Insurance.csv")
 
-# Create a new column for annual premium in USD and filter the data
+# Create a new column for annual premium in USD
 Vehicle_Insurance <- Vehicle_Insurance |>
   mutate(
     annual_premium_usd = Annual_Premium * 0.011
-  ) |>
-  # Filter out any annual premiums that are over $2000
-  filter(
-    annual_premium_usd <= 2000
-  )
-
-# Group the data by age and gender and calculate the mean annual premium
-Vehicle_Insurance_Aggregated <- Vehicle_Insurance |>
-  group_by(Age, Gender) |>
-  summarise(
-    annual_premium_usd = mean(annual_premium_usd, na.rm = TRUE),
-    .groups = 'drop'
   )
 
 # Create the scatter plot with a linear model trend line
 # The 'shape' aesthetic is now included inside aes() to create the legend
-ggplot(data = Vehicle_Insurance_Aggregated, mapping = aes(x = Age, y = annual_premium_usd, color = Gender, shape = Gender)) +
+ggplot(data = Vehicle_Insurance, mapping = aes(x = Age, y = annual_premium_usd, color = Gender, shape = Gender)) +
   geom_point() +
-  geom_smooth(method = "lm") +
-  scale_color_manual(values = c("Male" = "cornflowerblue", "Female" = "pink")) +
+  geom_smooth(method = "lm", color = "dark green") +
   labs(
-    title = "Age vs. Annual Premium (Average)",
+    title = "Age vs. Annual Premium",
     subtitle = "India",
     shape = "Gender",
     x = "Age (Years)",
-    y = "Average Annual Premium (USD)"
+    y = "Annual Premium (USD)"
   )
+
 ```
 
 \
 \
 
-According to the chart, age and gender was not a major component to one's annual premium.
+```{r}
+#| echo: false
+library(tidyverse)
+
+library(ggplot2)
+
+library(DataEditR)
+
+Vehicle_Insurance <- read.csv("../../Vehicle_Insurance.csv")
+
+Vehicle_Insurance <- Vehicle_Insurance |> mutate(
+  annual_premium_usd = Annual_Premium * 0.011
+)
+
+
+ggplot(data=Vehicle_Insurance, mapping= aes(x=Gender,y= annual_premium_usd, color= Gender))+ geom_point()+
+  labs(
+    title= "Gender Bias",
+    subtitle= "India",
+    shape= "Gender"
+  )
+```
+
+```{r}
+#| echo: false
+Vehicle_Insurance |> group_by(Gender) |> summarize(Avg_Premium = mean(annual_premium_usd))
+```
+
+According to the charts, age and gender was not a major component to one's annual premium.
 
 #### Discussion:
 
-My first assumption was proven wrong since age did not seem to dictate a major price difference with annual premiums throughout the years. I still believe that there are other factors that apply to an annual premium like amount of accidents, type of vehicle, and more.
+My first assumption was proven wrong since age did not seem to dictate a major price difference with annual premiums. I still believe that there are other factors that apply to an annual premium like amount of accidents, type of vehicle, and more.
+
