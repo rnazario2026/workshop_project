@@ -2,16 +2,30 @@
   {
     "objectID": "posts/my_first_post/index.html",
     "href": "posts/my_first_post/index.html",
-    "title": "Project",
+    "title": "Fact or Myth? Does Age and Gender Really Affect Car Insurance Premium? (India)",
     "section": "",
-    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This data set captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 400,000 rows, with each row representing a customer or policy.\nUse Cases: Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  Gender Avg_Premium\n  &lt;chr&gt;        &lt;dbl&gt;\n1 Female        335.\n2 Male          337."
+    "text": "Vehicle insurance is a smart financial decision that can protect you from the unexpected costs of an accident.\nBut does one’s age affect the amount they pay annually on their premium?\nIf so, does sex/gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This data set is set in India and captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records that are commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 400,000 rows, with each row representing a customer or policy.\n\n\n\n\n\nsuppressPackageStartupMessages(library(ggplot2))\nsuppressPackageStartupMessages(library(DataEditR))\nsuppressPackageStartupMessages(library(dplyr))\n\n\nVehicle_Insurance &lt;- read.csv(\"../../Vehicle_Insurance.csv\")\n\nVehicle_Insurance &lt;- Vehicle_Insurance |&gt;\n  mutate(\n    annual_premium_usd = Annual_Premium * 0.011\n  ) |&gt;filter(annual_premium_usd &lt;= 2000)\n\n\nVehicle_Insurance_Aggregated &lt;- Vehicle_Insurance |&gt;\n  group_by(Age, Gender) |&gt;\n  summarise(\n    annual_premium_usd = mean(annual_premium_usd, na.rm = TRUE),\n    .groups = 'drop'\n  )\n\n\nggplot(data = Vehicle_Insurance_Aggregated, mapping = aes(x = Age, y = annual_premium_usd, color = Gender, shape = Gender)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_color_manual(values = c(\"Male\" = \"cornflowerblue\", \"Female\" = \"pink\")) +\n  labs(\n    title = \"Age vs. Annual Premium (Average)\",\n    subtitle = \"India\",\n    shape = \"Gender\",\n    x = \"Age (Years)\",\n    y = \"Average Annual Premium (USD)\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nOverview: Annual premium increases as one’s age increases. Male and Female have a similar average as well.\n\n\n\nMy first assumption was not correct since the chart demonstrated that there is a linear increase as age increases but I found it interesting how during the ages between 20 and 45 there is also a linear decrease which means that there is a period in which one’s age does affect how much their premium is but not in the way I first assumed.\nFor my second assumption, I was correct since there is not a major difference in premiums when it came to sex/gender. Which means that one’s sex/gender does not dictate the price of one’s insurance premium in India."
   },
   {
-    "objectID": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-car-insurance-premium",
-    "href": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-car-insurance-premium",
-    "title": "Project",
+    "objectID": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-vehicle-insurance-premium-india",
+    "href": "posts/my_first_post/index.html#fact-or-myth-does-age-and-gender-really-affect-vehicle-insurance-premium-india",
+    "title": "Fact or Myth? Does Age and Gender Really Affect Car Insurance Premium? (India)",
     "section": "",
-    "text": "Does one’s age affect the amount they pay annually on their premium?\nIf so, does gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This data set captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 400,000 rows, with each row representing a customer or policy.\nUse Cases: Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.\n\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n# A tibble: 2 × 2\n  Gender Avg_Premium\n  &lt;chr&gt;        &lt;dbl&gt;\n1 Female        335.\n2 Male          337."
+    "text": "Vehicle insurance is a smart financial decision that can protect you from the unexpected costs of an accident.\nBut does one’s age affect the amount they pay annually on their premium?\nIf so, does sex/gender also become a factor? And what is the difference between them?\n\n\n\nYes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.\n\n\n\nWe’re going to use a data set created by Apoorva Sharma. This data set is set in India and captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.\n\nSource: The exact source is unspecified, but the data resembles real-world insurance records that are commonly used for analysis and modeling.\nCollection Method: Data was likely gathered from insurance application systems, policy records, and claims databases.\nKey Variables: Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.\nSize: Contains approximately 400,000 rows, with each row representing a customer or policy.\n\n\n\n\n\nsuppressPackageStartupMessages(library(ggplot2))\nsuppressPackageStartupMessages(library(DataEditR))\nsuppressPackageStartupMessages(library(dplyr))\n\n\nVehicle_Insurance &lt;- read.csv(\"../../Vehicle_Insurance.csv\")\n\nVehicle_Insurance &lt;- Vehicle_Insurance |&gt;\n  mutate(\n    annual_premium_usd = Annual_Premium * 0.011\n  ) |&gt;filter(annual_premium_usd &lt;= 2000)\n\n\nVehicle_Insurance_Aggregated &lt;- Vehicle_Insurance |&gt;\n  group_by(Age, Gender) |&gt;\n  summarise(\n    annual_premium_usd = mean(annual_premium_usd, na.rm = TRUE),\n    .groups = 'drop'\n  )\n\n\nggplot(data = Vehicle_Insurance_Aggregated, mapping = aes(x = Age, y = annual_premium_usd, color = Gender, shape = Gender)) +\n  geom_point() +\n  geom_smooth(method = \"lm\") +\n  scale_color_manual(values = c(\"Male\" = \"cornflowerblue\", \"Female\" = \"pink\")) +\n  labs(\n    title = \"Age vs. Annual Premium (Average)\",\n    subtitle = \"India\",\n    shape = \"Gender\",\n    x = \"Age (Years)\",\n    y = \"Average Annual Premium (USD)\"\n  )\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\nOverview: Annual premium increases as one’s age increases. Male and Female have a similar average as well.\n\n\n\nMy first assumption was not correct since the chart demonstrated that there is a linear increase as age increases but I found it interesting how during the ages between 20 and 45 there is also a linear decrease which means that there is a period in which one’s age does affect how much their premium is but not in the way I first assumed.\nFor my second assumption, I was correct since there is not a major difference in premiums when it came to sex/gender. Which means that one’s sex/gender does not dictate the price of one’s insurance premium in India."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About Me",
+    "section": "",
+    "text": "Hi my name is Richard Nazario. I am a Dominican University student who is majoring in finance and minoring in marketing. I decided to take the challenge of learning R programming because of my interest in data analysis. As a finance student I find it very important to strengthen my data analysis skills to further grow in my career."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Workshop Project",
+    "section": "",
+    "text": "Fact or Myth? Does Age and Gender Really Affect Car Insurance Premium? (India)\n\n\n\nProject\n\n\n\n\n\n\n\n\n\nAug 8, 2025\n\n\nRichard Nazario\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "readme.html",
@@ -96,33 +110,5 @@
     "title": "Using this quarto course blog template",
     "section": "",
     "text": "See this growing list of quarto resources for much, much more:\nhttps://github.com/mcanouil/awesome-quarto"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Workshop Project",
-    "section": "",
-    "text": "Hello, this is my website.\nI participated in a summer workshop at Dominican University and I created this website using R programming and Github.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nProject\n\n\n\ngeneral\n\n\n\n\n\n\n\n\n\nAug 6, 2025\n\n\nRichard Nazario\n\n\n\n\n\n\n\n\n\n\n\n\nExample assignment\n\n\n\ngoals\n\ngeneral\n\n\n\n\n\n\n\n\n\nOct 21, 2022\n\n\nMatt Crump\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About Me",
-    "section": "",
-    "text": "“If you can’t be kind, at least be vague.” ― Judith Martin.\n\nblah blah blah\nblah blah\nblah\n\n\n\nList\n\nbaba\nsegunda parte\nthird\n\nBig Text is my fav."
-  },
-  {
-    "objectID": "posts/Example_assignment/index.html",
-    "href": "posts/Example_assignment/index.html",
-    "title": "Example assignment",
-    "section": "",
-    "text": "Families are bleh bleh and blah blah"
-  },
-  {
-    "objectID": "posts/Example_assignment/index.html#project",
-    "href": "posts/Example_assignment/index.html#project",
-    "title": "Example assignment",
-    "section": "",
-    "text": "Families are bleh bleh and blah blah"
   }
 ]

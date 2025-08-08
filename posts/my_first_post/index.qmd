@@ -1,62 +1,56 @@
 ---
-title: "Project"
+title: "Fact or Myth? Does Age and Gender Really Affect Car Insurance Premium? (India)"
 author: "Richard Nazario"
-date: "2025-08-06"
-categories: [general]
+date: "2025-08-08"
+categories: [Project]
 ---
 
-## Fact or Myth? Does Age and Gender Really Affect Car Insurance Premium? (India)
+## Fact or Myth? Does Age and Gender Really Affect Vehicle Insurance Premium? (India)
 
 ![](/ca.jpg)
 
 ### **Introduction:**
 
-Does one's age affect the amount they pay annually on their premium?
+Vehicle insurance is a smart financial decision that can protect you from the unexpected costs of an accident.
+
+But does one's age affect the amount they pay annually on their premium?
 
 If so, does sex/gender also become a factor? And what is the difference between them?
 
 ### Prediction:
 
-Yes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn't make a difference in price.
+Yes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that sex/gender doesn't make a difference in price.
 
 ### Approach:
 
 We're going to use a data set created by [Apoorva Sharma](https://www.kaggle.com/datasets/apoorvasharma03/vehicle-insurance-dataset?resource=download). This data set is set in India and captures anonymized records related to vehicle insurance customers, offering insights into demographics, vehicle details, insurance history, policy features, and claim outcomes.
 
--   **Source:** The exact source is unspecified, but the data resembles real-world insurance records commonly used for analysis and modeling.
+-   **Source:** The exact source is unspecified, but the data resembles real-world insurance records that are commonly used for analysis and modeling.
 
 -   **Collection Method:** Data was likely gathered from insurance application systems, policy records, and claims databases.
 
--   **Key Variables:** Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.
+-   **Key Variables:** Includes customer age, sex/gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.
 
 -   **Size:** Contains approximately **400,000 rows**, with each row representing a customer or policy.
-
--   **Use Cases:** Ideal for EDA, feature engineering, predictive modeling (e.g., claim prediction), and customer segmentation in the insurance sector.
 
 ### Results:
 
 ```{r}
-#| echo: false
+#| echo: true
 
-# Suppress package startup messages for a cleaner output
 suppressPackageStartupMessages(library(ggplot2))
 suppressPackageStartupMessages(library(DataEditR))
 suppressPackageStartupMessages(library(dplyr))
 
-# Read the data from the CSV file
+
 Vehicle_Insurance <- read.csv("../../Vehicle_Insurance.csv")
 
-# Create a new column for annual premium in USD and filter the data
 Vehicle_Insurance <- Vehicle_Insurance |>
   mutate(
     annual_premium_usd = Annual_Premium * 0.011
-  ) |>
-  # Filter out any annual premiums that are over $2000
-  filter(
-    annual_premium_usd <= 2000
-  )
+  ) |>filter(annual_premium_usd <= 2000)
 
-# Group the data by age and gender and calculate the mean annual premium
+
 Vehicle_Insurance_Aggregated <- Vehicle_Insurance |>
   group_by(Age, Gender) |>
   summarise(
@@ -64,9 +58,8 @@ Vehicle_Insurance_Aggregated <- Vehicle_Insurance |>
     .groups = 'drop'
   )
 
-# Create the scatter plot with a linear model trend line
-# The 'shape' aesthetic is now included inside aes() to create the legend
-ggplot(data = Vehicle_Insurance_Aggregated, mapping = aes(x = Age, y = annual_premium_usd, color = Gender, shape = Gender)) +
+
+ggplot(data = Vehicle_Insurance_Aggregated, mapping = aes(x = Age, y = annual_premium_usd, color =Gender, shape =Gender)) +
   geom_point() +
   geom_smooth(method = "lm") +
   scale_color_manual(values = c("Male" = "cornflowerblue", "Female" = "pink")) +
@@ -79,9 +72,9 @@ ggplot(data = Vehicle_Insurance_Aggregated, mapping = aes(x = Age, y = annual_pr
   )
 ```
 
-**Overview:** Annual premium increases as one's age increases.
+**Overview:** Annual premium increases as one's age increases. Male and Female have a similar average as well.
 
-#### Discussion:
+### Discussion:
 
 My first assumption was not correct since the chart demonstrated that there is a linear increase as age increases but I found it interesting how during the ages between 20 and 45 there is also a linear decrease which means that there is a period in which one's age does affect how much their premium is but not in the way I first assumed.
 
