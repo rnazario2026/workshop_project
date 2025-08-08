@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="prediction" class="level3">
 <h3 class="anchored" data-anchor-id="prediction">Prediction:</h3>
-<p>Yes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that gender doesn’t make a difference in price.</p>
+<p>Yes, I believe that younger people have a higher premium than those who are older because of the assumption that younger drivers are more inexperienced. I also believe that sex/gender doesn’t make a difference in price.</p>
 </section>
 <section id="approach" class="level3">
 <h3 class="anchored" data-anchor-id="approach">Approach:</h3>
@@ -209,7 +209,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><strong>Source:</strong> The exact source is unspecified, but the data resembles real-world insurance records that are commonly used for analysis and modeling.</p></li>
 <li><p><strong>Collection Method:</strong> Data was likely gathered from insurance application systems, policy records, and claims databases.</p></li>
-<li><p><strong>Key Variables:</strong> Includes customer age, gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.</p></li>
+<li><p><strong>Key Variables:</strong> Includes customer age, sex/gender, driving experience, vehicle age/type, prior insurance, premium amount, sales channel, regional info, and claim history.</p></li>
 <li><p><strong>Size:</strong> Contains approximately <strong>400,000 rows</strong>, with each row representing a customer or policy.</p></li>
 </ul>
 </section>
@@ -237,7 +237,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  )</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Vehicle_Insurance_Aggregated, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> annual_premium_usd, <span class="at">color =</span> Gender, <span class="at">shape =</span> Gender)) <span class="sc">+</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Vehicle_Insurance_Aggregated, <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> annual_premium_usd, <span class="at">color =</span>Gender, <span class="at">shape =</span>Gender)) <span class="sc">+</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>) <span class="sc">+</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"cornflowerblue"</span>, <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"pink"</span>)) <span class="sc">+</span></span>
@@ -257,6 +257,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Vehicle_Insurance_Aggregated <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Gender) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Avg_Premium =</span> <span class="fu">mean</span>(annual_premium_usd))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 2
+  Gender Avg_Premium
+  &lt;chr&gt;        &lt;dbl&gt;
+1 Female        347.
+2 Male          340.</code></pre>
 </div>
 </div>
 <p><strong>Overview:</strong> Annual premium increases as one’s age increases. Male and Female have a similar average as well.</p>
